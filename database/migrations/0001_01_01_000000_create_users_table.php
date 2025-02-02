@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('instansi/kantor');
-            $table->string('tanggal hadir');
+            $table->string('tanggal-hadir');
             $table->string('keperluan')->nullable();
         });
 
