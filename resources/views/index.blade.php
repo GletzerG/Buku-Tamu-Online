@@ -48,11 +48,11 @@
 
 					<div class="wrap-input100 validate-input" data-validate="tanggal">
 						<input class="input100" type="date" name="pass" placeholder="tanggal hadir">
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+						<span class="focus-input100" data-placeholder="&#xf073;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Keperluan">
-						<input class="input100" type="date" name="pass" placeholder="Keperluan">
+						<input class="input100" type="text" name="pass" placeholder="Keperluan">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
