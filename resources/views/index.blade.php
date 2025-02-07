@@ -11,6 +11,7 @@
         body {
             background: linear-gradient(135deg, #0066FF, #00CCFF);
             font-family: 'Poppins', sans-serif;
+            overflow: scroll;
         }
 
         .box-area {
@@ -111,7 +112,7 @@
             display: none; /* Hidden by default */
         }
     </style>
-    <title>Aplikasi Pemimjaman Barang Lab</title>
+    <title>Buku Tamu Online</title>
 </head>
 <body>
 
@@ -131,7 +132,7 @@
             <!-------------------------- Right Box ---------------------------->
             <div class="col-md-6 right-box">
                 <div class="header-text mb-4 text-center">
-                    <h2>Login User</h2>
+                    <h2>Buku Tamu Online</h2>
                 </div>
                 <form action="proseslogin_anggota.php" method="post">
                     <div class="input-group mb-3">
@@ -150,7 +151,7 @@
 						<input type="Keperluan" name="perlu" class="form-control form-control-lg bg-light fs-6" placeholder="Keperluan">
 					</div>
                     <div class="input-group mb-3">
-                        <button class="btn btn-lg btn-primary w-100 fs-6" type="submit">Login</button>
+                        <button class="btn btn-lg btn-primary w-100 fs-6" type="submit">Submit</button>
                     </div>
                 </form>
                 <div class="input-group">
