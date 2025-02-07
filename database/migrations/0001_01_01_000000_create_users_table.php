@@ -14,11 +14,15 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('instansi_kantor');
-            $table->string('tanggal_hadir');
-            $table->string('ingin bertemu');
+            $table->string('instansi_kantor')->nullable();
+            $table->date('tanggal_hadir')->nullable();
+            $table->string('ingin_bertemu');
             $table->string('keperluan')->nullable();
+            $table->string  ('password');
+            $table->timestamps();
         });
+
+        
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();

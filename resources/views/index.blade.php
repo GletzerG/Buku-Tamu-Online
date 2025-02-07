@@ -134,18 +134,24 @@
                 <div class="header-text mb-4 text-center">
                     <h2>Buku Tamu Online</h2>
                 </div>
-                <form action="proseslogin_anggota.php" method="post">
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                <form action="{{ url('simpan-bukutamu') }}" method="post">
+                    @csrf
                     <div class="input-group mb-3">
-                        <input name="username" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Nama">
+                        <input name="nama" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Nama">
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" name="kantor" class="form-control form-control-lg bg-light fs-6" placeholder="Instansi/Kantor">
+                        <input type="text" name="instansi_kantor" class="form-control form-control-lg bg-light fs-6" placeholder="Instansi/Kantor">
                     </div>
 					<div class="input-group mb-3">
-						<input type="Date" name="tanggal" class="form-control form-control-lg bg-light fs-6" placeholder="tanggal">
+						<input type="date" name="tanggal" class="form-control form-control-lg bg-light fs-6" placeholder="tanggal">
 					</div>
 					<div class="input-group mb-3">
-						<input type="text" name="tugas" class="form-control form-control-lg bg-light fs-6" placeholder="ingin bertemu">
+						<input type="text" name="ingin_bertemu" class="form-control form-control-lg bg-light fs-6" placeholder="ingin bertemu">
 					</div>
 					<div class="input-group mb-3">
 						<input type="Keperluan" name="perlu" class="form-control form-control-lg bg-light fs-6" placeholder="Keperluan">
