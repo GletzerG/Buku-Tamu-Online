@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('instansi/kantor');
-            $table->string('tanggal-hadir');
+            $table->string('instansi_kantor');
+            $table->string('tanggal_hadir');
             $table->string('keperluan')->nullable();
         });
 

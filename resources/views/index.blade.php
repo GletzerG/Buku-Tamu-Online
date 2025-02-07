@@ -144,7 +144,7 @@
 						<input type="Date" name="tanggal" class="form-control form-control-lg bg-light fs-6" placeholder="tanggal">
 					</div>
 					<div class="input-group mb-3">
-						<input type="text" name="tugas" class="form-control form-control-lg bg-light fs-6" placeholder="ingin bertemu siapa">
+						<input type="text" name="tugas" class="form-control form-control-lg bg-light fs-6" placeholder="ingin bertemu">
 					</div>
 					<div class="input-group mb-3">
 						<input type="Keperluan" name="perlu" class="form-control form-control-lg bg-light fs-6" placeholder="Keperluan">
