@@ -156,7 +156,7 @@
                     </div>
                 </form>
                 <div class="input-group">
-                    <a href="../login.php" class="btn btn-lg btn-light w-100 fs-6">
+                    <a href="{{ url('dashboard.blade.php') }}" class="btn btn-lg btn-light w-100 fs-6">
                         <img src="{{url('frontend/images/Admin.png') }}" alt="Admin Icon">
                         <small>Login Sebagai Admin</small>
                     </a>
@@ -171,7 +171,7 @@
     <script>
         $(document).ready(function () {
             const successMessage = "{{ session('status') }}";
-            const errorMessages = @json($errors->all()); // Ambil semua error dari Laravel
+            const errorMessages = @json($errors->all()); 
 
             function showAlert(color, message) {
                 $('#alert-message').css({
@@ -186,12 +186,12 @@
                 }, 3000);
             }
 
-            // Jika berhasil
+            
             if (successMessage) {
                 showAlert("green", successMessage);
             }
 
-            // Jika ada error
+            
             if (errorMessages.length > 0) {
                 errorMessages.forEach((msg) => {
                     showAlert("red", msg);
