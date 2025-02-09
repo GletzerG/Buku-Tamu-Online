@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="login.css">
     <link rel="icon" type="image/png" href="../images/logo1.png">
     <style>
         body {
@@ -134,15 +133,11 @@
                 <div class="header-text mb-4 text-center">
                     <h2>Buku Tamu Online</h2>
                 </div>
-                @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
+                
                 <form action="{{ url('simpan-bukutamu') }}" method="post">
                     @csrf
                     <div class="input-group mb-3">
-                        <input name="nama" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Nama">
+                        <input type="text" name="nama" class="form-control form-control-lg bg-light fs-6" placeholder="Nama">
                     </div>
                     <div class="input-group mb-3">
                         <input type="text" name="instansi_kantor" class="form-control form-control-lg bg-light fs-6" placeholder="Instansi/Kantor">
@@ -172,26 +167,38 @@
 
     <!-- Alert Messages -->
     <div id="alert-message" class="alert" role="alert"></div>
-
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            const status = "<?php echo isset($status) ? $status : ''; ?>"; // Check if status is set
+        $(document).ready(function () {
+            const successMessage = "{{ session('status') }}";
+            const errorMessages = @json($errors->all()); // Ambil semua error dari Laravel
 
             function showAlert(color, message) {
-                $('#alert-message').css('background-color', color).text(message).fadeIn();
+                $('#alert-message').css({
+                    "background-color": color,
+                    "color": "white",
+                    "padding": "10px",
+                    "border-radius": "5px"
+                }).text(message).fadeIn();
+
                 setTimeout(() => {
                     $('#alert-message').fadeOut();
-                }, 3000); // Hide alert after 3 seconds
+                }, 3000);
             }
 
-            if (status === "success") {
-                showAlert("green", "Login berhasil, tunggu sebentar! ✅"); // Emoji centang
-                setTimeout(() => window.location.href = 'dashboard.php', 5000); // Redirect ke dashboard setelah 5 detik
-            } else if (status === "failure") {
-                showAlert("red", "Tolong periksa username dan password! ⚠️"); // Emoji bahaya
+            // Jika berhasil
+            if (successMessage) {
+                showAlert("green", successMessage);
+            }
+
+            // Jika ada error
+            if (errorMessages.length > 0) {
+                errorMessages.forEach((msg) => {
+                    showAlert("red", msg);
+                });
             }
         });
     </script>
+
 </body>
 </html>

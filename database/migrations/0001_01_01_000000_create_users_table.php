@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama')->nullable();
             $table->string('instansi_kantor')->nullable();
             $table->date('tanggal_hadir')->nullable();
             $table->string('ingin_bertemu');
