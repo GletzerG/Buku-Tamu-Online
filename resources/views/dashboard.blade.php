@@ -8,7 +8,6 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <!-- Sidebar -->
         @include('layout.sidebar')
 
         <!-- Content Wrapper -->
@@ -592,7 +591,6 @@
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
     @include('layout.js')
 
 </body>
