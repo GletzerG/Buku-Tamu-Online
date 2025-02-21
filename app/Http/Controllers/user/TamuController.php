@@ -30,4 +30,6 @@ class TamuController extends Controller
         $data->save();
         return redirect('/')->with('status', 'Data berhasil dikirim!');
     }
+
+    
 }

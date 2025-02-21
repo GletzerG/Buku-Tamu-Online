@@ -28,7 +28,7 @@
                         <td>{{ $item->ingin_bertemu }}</td>
                         <td>{{ $item->keperluan }}</td>
                         <td>
-                            <a href="" class="btn btn-warning">Edit</a>
+                            <a href="{{ url ('admin/form-edit', $item->id) }}" class="btn btn-warning">Edit</a>
                             <a href="" class="btn btn-danger">Hapus</a>
                     </tr>
                 @endforeach
