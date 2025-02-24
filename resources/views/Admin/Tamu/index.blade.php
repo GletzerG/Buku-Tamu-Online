@@ -3,7 +3,7 @@
 
     <div class="card">
         <div class="card-header">
-            Data Tamu <a href="" class="btn btn-success">Tambah Data</a>
+            Data Tamu <a href="{{ url('admin/form-tambah') }}" class="btn btn-success">Tambah Data</a>
         </div>
         <div class="card-body">
             <table class="table" id="myTable">

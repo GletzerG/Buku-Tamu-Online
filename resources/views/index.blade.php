@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,8 +36,13 @@
         }
 
         @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
 
         .right-box {
@@ -101,18 +107,20 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         /* Alert Styles */
         .alert {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1000;
-            display: none; /* Hidden by default */
+            display: none;
+            /* Hidden by default */
         }
     </style>
     <title>Buku Tamu Online</title>
 </head>
+
 <body>
 
     <!----------------------- Main Container -------------------------->
@@ -126,31 +134,36 @@
                 <div class="featured-image">
                     <img src="{{url('frontend/images/logo1.png') }}" class="img-fluid" alt="User Icon">
                 </div>
-            </div> 
+            </div>
 
             <!-------------------------- Right Box ---------------------------->
             <div class="col-md-6 right-box">
                 <div class="header-text mb-4 text-center">
                     <h2>Buku Tamu Online</h2>
                 </div>
-                
+
                 <form action="{{ url('simpan-bukutamu') }}" method="post">
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="text" name="nama" class="form-control form-control-lg bg-light fs-6" placeholder="Nama">
+                        <input type="text" name="nama" class="form-control form-control-lg bg-light fs-6"
+                            placeholder="Nama">
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" name="instansi_kantor" class="form-control form-control-lg bg-light fs-6" placeholder="Instansi/Kantor">
+                        <input type="text" name="instansi_kantor" class="form-control form-control-lg bg-light fs-6"
+                            placeholder="Instansi/Kantor">
                     </div>
-					<div class="input-group mb-3">
-						<input type="date" name="tanggal" class="form-control form-control-lg bg-light fs-6" placeholder="tanggal">
-					</div>
-					<div class="input-group mb-3">
-						<input type="text" name="ingin_bertemu" class="form-control form-control-lg bg-light fs-6" placeholder="ingin bertemu">
-					</div>
-					<div class="input-group mb-3">
-						<input type="Keperluan" name="perlu" class="form-control form-control-lg bg-light fs-6" placeholder="Keperluan">
-					</div>
+                    <div class="input-group mb-3">
+                        <input type="date" name="tanggal" class="form-control form-control-lg bg-light fs-6"
+                            placeholder="tanggal">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" name="ingin_bertemu" class="form-control form-control-lg bg-light fs-6"
+                            placeholder="ingin bertemu">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="Keperluan" name="perlu" class="form-control form-control-lg bg-light fs-6"
+                            placeholder="Keperluan">
+                    </div>
                     <div class="input-group mb-3">
                         <button class="btn btn-lg btn-primary w-100 fs-6" type="submit">Submit</button>
                     </div>
@@ -171,7 +184,7 @@
     <script>
         $(document).ready(function () {
             const successMessage = "{{ session('status') }}";
-            const errorMessages = @json($errors->all()); 
+            const errorMessages = @json($errors->all());
 
             function showAlert(color, message) {
                 $('#alert-message').css({
@@ -186,12 +199,12 @@
                 }, 3000);
             }
 
-            
+
             if (successMessage) {
                 showAlert("green", successMessage);
             }
 
-            
+
             if (errorMessages.length > 0) {
                 errorMessages.forEach((msg) => {
                     showAlert("red", msg);
@@ -201,4 +214,5 @@
     </script>
 
 </body>
+
 </html>
