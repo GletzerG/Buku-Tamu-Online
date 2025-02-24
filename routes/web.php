@@ -17,3 +17,5 @@ Route::post('/store', [TamuController::class, 'store']);
 Route::get('admin/form-edit/{id}', [AdminTamuController::class, 'formEdit'])->name('admin-form-edit');
 Route::get('admin/form-tambah', [AdminTamuController::class, 'formTambah'])->name('admin-form-tambah');
 Route::post('admin/simpan-data', [AdminTamuController::class, 'simpanData'])->name('admin-simpan-data');
+Route::post('admin/update-data/{id}', [AdminTamuController::class, 'updateTamu'])->name('admin-update-data');
+Route::post('admin/hapus-data/{id}', [AdminTamuController::class, 'hapusTamu'])->name('admin-hapus-data');
