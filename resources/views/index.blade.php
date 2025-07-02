@@ -171,7 +171,7 @@
                 <div class="input-group">
                     <a href="{{ url('dashboard') }}" class="btn btn-lg btn-light w-100 fs-6">
                         <img src="{{url('frontend/images/Admin.png') }}" alt="Admin Icon">
-                        <small>Login Sebagai Admin</small>
+                        <small>Dashboard Tamu</small>
                     </a>
                 </div>
             </div>
